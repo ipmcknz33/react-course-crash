@@ -1,18 +1,22 @@
-import './Modal.css'
+import "./Modal.css";
 
-function modal() {
+function Modal({ title, cancelModal, confirmModal }) {
   return (
     <>
-  <div className="modal">
-    <p className="modal__title">Are you sure?</p>
-    <div className="modal__buttons">
-      <button className="btn btn__cancel">Cancel</button>
-      <button className="btn">Confirm</button>
-    </div>
-  </div>
-  <div className="backdrop" />
-</>
-    );
+      <div className="Modal">
+        <p className="Modal__title">{title}</p>
+        <div className="Modal__buttons">
+          <button onClick={() => cancelModal()} className="btn btn__cancel">
+            Cancel
+          </button>
+          <button onCClick={() => confirmModal()} className="btn">
+            Confirm
+          </button>
+        </div>
+      </div>
+      <div className="backdrop" />
+    </>
+  );
 }
 
-export default modal;
+export default Modal;

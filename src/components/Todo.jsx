@@ -1,16 +1,15 @@
 import './Todo.css';
 
-function Todo(props) {
-  console.log(props);
-  return (
-
-     <div className="todo">
+function Todo({ title, onTodoDelete }) {
+  
+    return (
+      <div className="Todo">
+        <p>{title}</p>
         
-     <h2>{props.title}</h2>
-     <button>Delete</button>
+        <button onClick={onTodoDelete}>Delete</button>
       </div>
-    
-  );
-}
+    );
+  }
+ 
 
 export default Todo;    
