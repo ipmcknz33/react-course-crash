@@ -19,6 +19,7 @@ function Home() {
         fetchUsers();
     }, 2000);
   }, []);
+  
 function renderUsers() {
      return users.map((user) => (
         <Link to={`/users/${user.id}`} key={user.id}>
