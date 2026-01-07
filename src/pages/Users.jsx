@@ -1,6 +1,6 @@
 
 import { useParams } from "react-router-dom";
-import React, { use, useEffect }from "react";
+import React, { useState, useEffect }from "react";
 
 function Users() {
     const { username } = useParams();

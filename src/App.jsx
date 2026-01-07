@@ -1,9 +1,9 @@
 import "./App.css";
 import{ BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home.jsx";
-  
+import user from "./pages/Users.jsx"; 
 import Nav from "./components/Nav.jsx";
-import user from "./pages/Users.jsx";
+
 
 function App() {
 
