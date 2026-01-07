@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import User from "../components/User.jsx";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -15,23 +16,27 @@ function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetchUsers();
-    }, 500);
+        fetchUsers();
+    }, 2000);
   }, []);
-
-  const pixels = "3px";
-
-  return (
-    <div>
-      {users.map((user) => (
+function renderUsers() {
+     return users.map((user) => (
+        <Link to={`/users/${user.id}`} key={user.id}>
         <User
-          key={user.id}
           id={user.id}
           name={user.name}
           username={user.username}
           email={user.email}
-        />
-      ))}
+          />
+      </Link>
+        )) 
+    }
+function renderskeletonloading() {
+    return ( <h1>Loading...</h1>)
+}
+  return (
+    <div>
+     {users.length ? renderUsers() : renderskeletonloading()}     
     </div>
   );
 }
